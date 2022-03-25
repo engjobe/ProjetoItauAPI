@@ -1,0 +1,37 @@
+package br.com.jogestionti.projeto.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tbfluxocaixa")
+
+public class FluxoCaixa {
+
+	@Id
+	
+	@Column(name="conta") 
+	private int conta; 
+	
+	@Column(name="fluxo") 
+	private int fluxo; 
+	
+	@Column(name="entrada") 
+	private String entrada; 
+	
+	@Column(name="saida")
+	private String saida;
+
+	@ManyToOne
+	@JoinColumn(name="ag")
+	private Correntista titular;
+
+
+	
+	
+	
+}

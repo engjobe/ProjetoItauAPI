@@ -1,0 +1,78 @@
+package br.com.jogestionti.projeto.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "fluxo_caixa")
+
+public class FluxoCaixa {
+
+	@Column(name = "conta")
+	private String conta;
+
+	@Column(name = "fluxo")
+	private String fluxo;
+
+	@Column(name = "entrada")
+	private String entrada;
+
+	@Column(name = "saida")
+	private String saida;
+
+	@ManyToOne
+	@JoinColumn(name = "ag")
+	private FluxoCaixa FluxoCaixa;
+
+	public FluxoCaixa getFluxoCaixa() {
+		return FluxoCaixa;
+	}
+
+	public void setFluxoCaixa(FluxoCaixa fluxoCaixa) {
+		FluxoCaixa = fluxoCaixa;
+	}
+
+	public String getAg() {
+		return ag;
+	}
+
+	public void setAg(String ag) {
+		this.ag = ag;
+	}
+
+	public String getConta() {
+		return conta;
+	}
+
+	public void setConta(String conta) {
+		this.conta = conta;
+	}
+
+	public String getFluxo() {
+		return fluxo;
+	}
+
+	public void setFluxo(String fluxo) {
+		this.fluxo = fluxo;
+	}
+
+	public String getEntrada() {
+		return entrada;
+	}
+
+	public void setEntrada(String entrada) {
+		this.entrada = entrada;
+	}
+
+	public String getSaida() {
+		return saida;
+	}
+
+	public void setSaida(String saida) {
+		this.saida = saida;
+	}
+
+}

@@ -1,0 +1,27 @@
+package br.com.jogestionti.projeto.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.jogestionti.projeto.dao.CorrentistaDao;
+import br.com.jogestionti.projeto.model.FluxoCaixa;
+
+@RestController
+public class FluxoContaController {
+	
+	@Autowired
+	private FluxoCaixaDao dao;
+	
+	@GetMapping("/fluxo")
+	
+	public ArrayList<FluxoCaixa> recuperarTudo(){
+		ArrayList<FluxoCaixa> lista;
+		lista=(ArrayList<FluxoCaixa>)dao.findAll();
+		return lista;
+		
+	}	
+
+}

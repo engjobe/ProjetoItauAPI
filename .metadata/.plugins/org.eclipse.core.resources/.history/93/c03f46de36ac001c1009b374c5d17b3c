@@ -1,0 +1,5 @@
+package br.com.jogestionti.projeto.dao;
+
+public interface FluxoCaixaDao {
+
+}
